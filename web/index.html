@@ -22,23 +22,63 @@
   </header>
 
   <main class="landing" id="landing">
-    <div class="dropzone">
-      <h1>Open a case file</h1>
-      <p>
-        Drop your <code>.xml</code> cases here, or pick your whole
-        <code>mods</code> folder. Nothing is uploaded — the icon library is
-        bundled, so this runs entirely offline.
-      </p>
-      <div class="actions">
-        <button class="btn primary" id="pickFiles" type="button" disabled>Choose files</button>
-        <button class="btn" id="pickFolder" type="button" disabled>Choose folder</button>
+    <div class="landing-inner">
+
+      <div class="dropzone">
+        <h1>Open a case file</h1>
+        <p>
+          Drop your <code>.xml</code> cases here, or pick your whole
+          <code>mods</code> folder. Nothing is uploaded — the icon library is
+          bundled, so this runs entirely offline.
+        </p>
+        <div class="actions">
+          <button class="btn primary" id="pickFiles" type="button" disabled>Choose files</button>
+          <button class="btn" id="pickFolder" type="button" disabled>Choose folder</button>
+        </div>
+        <input type="file" id="fileInput" accept=".xml" multiple>
+        <input type="file" id="folderInput" webkitdirectory directory multiple>
+        <p class="fine">
+          77 fields per case, checked against <span id="vanillaCount">382</span> vanilla cases.<br>
+          The card is the actual sprite the shop will draw.
+        </p>
       </div>
-      <input type="file" id="fileInput" accept=".xml" multiple>
-      <input type="file" id="folderInput" webkitdirectory directory multiple>
-      <p class="fine">
-        77 fields per case, checked against <span id="vanillaCount">382</span> vanilla cases.<br>
-        The card is the actual sprite the shop will draw.
-      </p>
+
+      <section class="landing-notes">
+        <article>
+          <h2>Your prefab brought its physics with it</h2>
+          <p>
+            Every case mod starts as a copy of a vanilla prefab, and the prefab
+            carries GPU clearance, radiator sizes, drive bays and motherboard
+            support. Those numbers still describe the case you copied. The shop
+            will sell yours without complaint while its spec sheet is a lie.
+          </p>
+        </article>
+
+        <article>
+          <h2>It tells you which ones you missed</h2>
+          <p>
+            Every field is diffed against its donor. Content changes are split
+            from identity changes, so what you are looking at is genuinely
+            <em>what you forgot</em> — not the <code>ID</code> and
+            <code>Part Name</code> you were always going to change.
+          </p>
+          <div class="landing-stats">
+            <span><b>503</b> content diffs found across the 22 published case mods</span>
+            <span><b>20 of 22</b> silently omit <code>Max PCI Size</code></span>
+          </div>
+        </article>
+
+        <article>
+          <h2>And the card is the real thing</h2>
+          <p>
+            The thumbnail is decoded from the game's own
+            <code>_MINI</code> sprite — the same one the shop draws. If your
+            <code>Asset Path</code> has no matching sprite, you get a blank white
+            card in game, and you get a blank white card here first.
+          </p>
+        </article>
+      </section>
+
     </div>
   </main>
 

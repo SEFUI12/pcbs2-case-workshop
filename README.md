@@ -7,15 +7,12 @@ case its prefab came from, across all 77 fields.
 
 No install, no `.exe`, no injected `.dll`. Open `web/index.html` and it runs.
 
-```
-┌──────────────┬─────────────────────────────┬──────────────────┐
-│ file list    │  77 fields, in 7 groups     │  live shop card  │
-│              │                             │──────────────────│
-│ CASE_4000D   │  Price        [219]         │  differences     │
-│ CASE_A1      │               vanilla: 190  │  checks          │
-│ CASE_Meshify │  Level        [1]           │  XML             │
-└──────────────┴─────────────────────────────┴──────────────────┘
-```
+![The editor, with a real case loaded](docs/screenshots/editor.png)
+
+The card on the right is not a mock-up: it is the same `_MINI` sprite the game's
+shop draws, decoded from your own install. Left pane is your file. Middle pane is
+all 77 fields, with the vanilla value shown underneath every field you changed.
+Right is the card, the diff and the checks.
 
 ---
 
@@ -61,6 +58,8 @@ nothing visibly breaks — which is precisely why nobody noticed.
 ---
 
 ## Running it
+
+![The landing page](docs/screenshots/landing.png)
 
 **Open it.** Double-click `web/index.html`, or run `启动工坊.bat` on Windows
 (which serves on `127.0.0.1:8770` for browsers that refuse `file://`).

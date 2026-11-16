@@ -13,3 +13,7 @@ web/icons/index.json linguist-generated=true
 
 # Windows launcher needs CRLF to behave in some shells.
 *.bat text eol=crlf
+
+# README screenshots: binary, and they dominate the repo's language stats
+# otherwise.
+docs/screenshots/*.png binary
