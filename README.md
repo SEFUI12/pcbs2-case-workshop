@@ -7,6 +7,9 @@ case its prefab came from, across all 77 fields.
 
 No install, no `.exe`, no injected `.dll`. Open `web/index.html` and it runs.
 
+**Try it without downloading anything:**
+https://sefui12.github.io/pcbs2-case-workshop/web/index.html
+
 ![The editor, with a real case loaded](docs/screenshots/editor.png)
 
 The card on the right is not a mock-up: it is the same `_MINI` sprite the game's
@@ -61,7 +64,10 @@ nothing visibly breaks — which is precisely why nobody noticed.
 
 ![The landing page](docs/screenshots/landing.png)
 
-**Open it.** Double-click `web/index.html`, or run `启动工坊.bat` on Windows
+**Try it first, no download:** https://sefui12.github.io/pcbs2-case-workshop/web/index.html
+— the hosted copy is byte-for-byte the same page, and still uploads nothing.
+
+**Then open it.** Double-click `web/index.html`, or run `启动工坊.bat` on Windows
 (which serves on `127.0.0.1:8770` for browsers that refuse `file://`).
 
 Then drop `.xml` cases onto the page, or pick your whole `mods` folder.

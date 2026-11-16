@@ -81,6 +81,8 @@ test for each of the three traps above.
 
 ### Install / use
 
+**Try it first — no download:** https://sefui12.github.io/pcbs2-case-workshop/web/index.html
+
 1. Download, unzip anywhere (no admin, no folder requirement).
 2. Open `web/index.html`. That is it.
 3. Drop your `.xml` files on the page, or point it at your whole `mods` folder.
@@ -164,6 +166,8 @@ kind is usually how the checks get better.
 22 个已发布机箱 mod 全部**字节级一致**往返。上面三个坑各有一条回归测试盯着。
 
 ### 怎么用
+
+**先在线试，不用下载：** https://sefui12.github.io/pcbs2-case-workshop/web/index.html
 
 1. 下载，解压到任意位置（不需要管理员权限，不需要特定目录）。
 2. 打开 `web/index.html`。就这一步。
