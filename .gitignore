@@ -1,0 +1,35 @@
+# Nothing here is a build artifact; the app runs from source.
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Regenerable from a retail install; keep the repo to source + shipped data.
+web/icons/tmp/
+*.tmp
+*.bak
+
+# The shop card only ever asks for `<AssetPath>_MINI`. The 512px base sprites
+# are real artwork but the game never draws them on a card, and shipping them
+# adds ~70 MB. export_icons.py already skips them.
+web/icons/*.webp
+!web/icons/*_MINI.webp
+
+# Local overrides
+*.local.json

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCBS2 Case Workshop</title>
+<meta name="description" content="Edit PC Building Simulator 2 case mods in the browser, with a live shop card and a 77-field diff against the vanilla case your prefab came from.">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">Case Workshop <span>PCBS2</span></div>
+    <div class="topbar-actions">
+      <button class="btn btn-ghost" id="newBtn" disabled>New case</button>
+      <button class="btn btn-ghost" id="saveAllBtn" disabled>Save all</button>
+      <button class="btn btn-ghost" id="saveBtn" disabled>Save XML</button>
+      <button class="btn btn-ghost" id="closeBtn" hidden>Close</button>
+    </div>
+    <div class="status" id="status">starting…</div>
+  </header>
+
+  <main class="landing" id="landing">
+    <div class="dropzone">
+      <h1>Open a case file</h1>
+      <p>
+        Drop your <code>.xml</code> cases here, or pick your whole
+        <code>mods</code> folder. Nothing is uploaded — the icon library is
+        bundled, so this runs entirely offline.
+      </p>
+      <div class="actions">
+        <button class="btn primary" id="pickFiles" type="button" disabled>Choose files</button>
+        <button class="btn" id="pickFolder" type="button" disabled>Choose folder</button>
+      </div>
+      <input type="file" id="fileInput" accept=".xml" multiple>
+      <input type="file" id="folderInput" webkitdirectory directory multiple>
+      <p class="fine">
+        77 fields per case, checked against <span id="vanillaCount">382</span> vanilla cases.<br>
+        The card is the actual sprite the shop will draw.
+      </p>
+    </div>
+  </main>
+
+  <div class="workbench" id="editor" hidden>
+
+    <nav class="pane files-pane">
+      <div class="pane-head">
+        Files <span class="count" id="fileCount">0</span>
+      </div>
+      <div class="clash-note" id="clashNote" hidden></div>
+      <div id="fileList"></div>
+    </nav>
+
+    <section class="pane form-pane">
+      <div class="pane-head">Fields</div>
+      <div id="form"></div>
+    </section>
+
+    <aside class="pane side-pane">
+
+      <div class="card-wrap">
+        <div class="shop-card" id="card"></div>
+        <div class="card-caption" id="cardCaption"></div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-title">
+          Differences
+          <span class="sub" id="donorName">—</span>
+        </div>
+        <div id="diff"></div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-title">Checks</div>
+        <div id="issues"></div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-title">
+          XML
+          <span class="sub" id="sourceStats"></span>
+        </div>
+        <textarea id="source" spellcheck="false" readonly></textarea>
+        <div class="source-actions">
+          <button class="btn" id="copyBtn" type="button">Copy XML</button>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<script src="data/vanilla_cases.js"></script>
+<script src="icons/index.js"></script>
+<script src="js/pcbs2.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

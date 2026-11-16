@@ -1,0 +1,15 @@
+# Normalise nothing. This project's core promise is that opening and saving a
+# case file does not change its bytes, and several files legitimately contain
+# CRLF or a BOM. Letting git convert line endings would fight that.
+* -text
+
+# Generated data: keep it out of diffs and language stats, but commit it, so the
+# app runs from a fresh clone without a retail install.
+web/icons/*.webp binary
+web/data/vanilla_cases.js linguist-generated=true
+web/icons/index.js linguist-generated=true
+web/data/vanilla_cases.json linguist-generated=true
+web/icons/index.json linguist-generated=true
+
+# Windows launcher needs CRLF to behave in some shells.
+*.bat text eol=crlf
